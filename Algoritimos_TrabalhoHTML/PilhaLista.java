@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 -- identificar fechamento de tag(ler, e se for fechamento da que está no topo, 
 eu verifico se é compatível com a  tag de abertura(a do topo), se não for da erro, se for ela desempilha e continua
 --
--- interface
+-- interface    
 
  */
 public class PilhaLista<T> implements Pilha<T> {
