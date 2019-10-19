@@ -1,0 +1,35 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+import Algoritimos_TrabalhoHTML.PilhaLista;
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+/**
+ *
+ * @author filipe.veber
+ */
+public class Main {
+
+    public Main() {
+    }
+
+    @Test
+    public void pilha_estah_vazia() {
+        PilhaLista pilha = new PilhaLista();
+        assertEquals(pilha.getTamanho(), 0);
+        assertEquals(pilha.vazia(), true);
+    }
+
+    @Test
+    public void empilha_um_elemento() throws Exception {
+        PilhaLista pilha = new PilhaLista();
+        pilha.push("Pilha 1");
+        assertEquals("Pilha 1", pilha.peek());
+        assertEquals(pilha.getTamanho(), 1);
+    }
+
+}
