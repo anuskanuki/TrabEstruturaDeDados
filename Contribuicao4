@@ -1,0 +1,64 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+import Algoritimos_TrabalhoHTML.PilhaLista;
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+/**
+ *
+ * @author filipe.veber
+ */
+public class Main {
+
+    public Main() {
+    }
+
+    @Test
+    public void pilha_estah_vazia() {
+        PilhaLista pilha = new PilhaLista();
+        assertEquals(pilha.getTamanho(), 0);
+        assertEquals(pilha.vazia(), true);
+    }
+
+    @Test
+    public void empilha_um_elemento() throws Exception {
+        PilhaLista pilha = new PilhaLista();
+        pilha.push("Pilha 1");
+        assertEquals("Pilha 1", pilha.peek());
+        assertEquals(pilha.getTamanho(), 1);
+    }
+
+    @Test
+    public void desempilha_ultimo_elemento() throws Exception {
+        PilhaLista pilha = new PilhaLista<>();
+        String objetoEmpilhado = "Pilha 1";
+        pilha.push(objetoEmpilhado);
+
+        assertEquals(objetoEmpilhado, pilha.peek());
+        assertEquals(pilha.getTamanho(), 1);
+
+        Object objetoDesempiplhado = pilha.pop();
+        assertEquals(pilha.getTamanho(), 0);
+        assertEquals(pilha.vazia(), true);
+        assertEquals(objetoEmpilhado, objetoDesempiplhado);
+    }
+    
+    @Test
+    public void empilha_mais_de_um_elemento() throws Exception {
+        PilhaLista p = new PilhaLista();
+        String objetoEmpilhado1 = "Pilha 1";
+        String objetoEmpilhado2 = "Pilha 2";
+        String objetoEmpilhado3 = "Pilha 3";
+        p.push(objetoEmpilhado1);
+        p.push(objetoEmpilhado2);
+        p.push(objetoEmpilhado3);
+        
+        assertEquals(p.getTamanho(), 3);
+        assertEquals(p.vazia(), false);
+        assertEquals(p.peek(), objetoEmpilhado3);
+    }
+}
