@@ -8,13 +8,12 @@ import java.util.logging.Logger;
 -- identificar abertura de tag(ler, e se for abertura, insere na pilha)
 -- identificar fechamento de tag(ler, e se for fechamento da que está no topo, 
 eu verifico se é compatível com a  tag de abertura(a do topo), se não for da erro, se for ela desempilha e continua
---
+--enquanto lê, preciso armazenar o nome da tag e incrementar, para ao final ter "tag "x"  teve 4 ocorrências"
 -- interface    
-
  */
 public class PilhaLista<T> implements Pilha<T> {
 
-    private ElementoLista<T> topo;
+    private NoLista<T> topo;
     private int tam;
 
     public PilhaLista() {
@@ -24,12 +23,11 @@ public class PilhaLista<T> implements Pilha<T> {
 
     public PilhaLista(T info) throws Exception {
         push(info);
-
     }
 
     @Override
     public void push(T info) throws Exception {
-        ElementoLista<T> no = new ElementoLista<>(info);
+        NoLista<T> no = new NoLista<>(info);
         no.setProx(topo);
         topo = no;
         tam++;
@@ -60,7 +58,7 @@ public class PilhaLista<T> implements Pilha<T> {
 
     @Override
     public void libera() {
-        ElementoLista<T> aux = topo;
+        NoLista<T> aux = topo;
         try {
             while (topo != null) {
                 pop();
